@@ -2,6 +2,27 @@
 <html>
   <head>
     <title> MultiClip </title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+
+    <style>
+
+    input[type=submit]{
+       border: 0 none;
+       background: #99e0b2;
+       padding: 5px 15px;
+       cursor: pointer;
+
+    }
+
+    .optionsBox{
+      width:250px;
+      font-family: 'Space Mono', monospace;
+
+    }
+
+    </style>
       <script src="jquery.js">
       </script>
       <script src="popup.js">
@@ -12,14 +33,24 @@
   </head>
 
   <body>
+    <div class="optionsBox">
     <h1> MultiClip </h1>
 
-    <h2> Clipboard Name <span id="clipName"> blank </span></h2>
-    <h2> Clipboard Value <span id="clipVal"> empty </span></h2>
+    <h3> Slot #1 <br> <span id="clipVal1"> empty </span></h3>
+    <h3> Slot #2 <br> <span id="clipVal2"> empty </span></h3>
+    <h3> Slot #3 <br> <span id="clipVal3"> empty </span></h3>
 
-    <h3> Enter Value </h3>
-    <input type="text" id="clipText"/>
-    <input type="submit" id="textButt" value="Enter">
+    <br>
+
+    <h3> Enter Values </h3>
+    <input type="text" id="clipText1"/>
+    <br>
+    <br>
+    <input type="submit" id="textButt1" value="Fill 1" style=
+    font-family: 'Space Mono'; monospace;>
+    <input type="submit" id="textButt2" value="Fill 2">
+    <input type="submit" id="textButt3" value="Fill 3">
+    </div>
 
   </body>
 

@@ -5,7 +5,7 @@
     "128": "icon_128.png"
   },
   "description": "Create multiple clipboards for text",
-  "permissions": ["storage", "contextMenus"],
+  "permissions": ["storage", "contextMenus", "activeTab"],
   "manifest_version": 2,
   "background": {
     "scripts": ["eventPage.js"],
@@ -14,5 +14,13 @@
   "options_page": "options.html",
   "browser_action": {
     "default_popup": "popup.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
 }
