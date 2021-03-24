@@ -20,7 +20,7 @@
       "matches": [
         "*://*/*"
       ],
-      "js": ["content.js"]
+      "js": ["content.js", "paste.js"]
     }
   ]
 }

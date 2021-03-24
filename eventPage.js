@@ -59,7 +59,11 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
 
     chrome.storage.sync.set({'copynum': 2});
 
-    chrome.tabs.executeScript(null, {file: './content.js'});
+    chrome.tabs.executeScript(null, {
+      code: 'var param = 2'
+    }, function() {
+      chrome.tabs.executeScript(null, {file: './content.js'});
+    });
 
   }
 })
@@ -81,33 +85,45 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
 
 chrome.contextMenus.create(contextMenuItem11)
 chrome.contextMenus.onClicked.addListener(function(clickData){
-  if (clickData.menuItemId == "paste 1"){
-    chrome.storage.sync.get(['clipVal1'], function(clipboard){
+  if (clickData.menuItemId == "one_p"){
 
-      var elem = document.activeElement;
-      var mystring1 = clipboard.clipVal1;
-      var start = elem.selectionStart;
-      var end = elem.selectionEnd;
-      elem.value = elem.value.slice(0, start) + mystring1 + elem.value.substr(end);
-      // Set cursor after selected text
-      elem.selectionStart = start + mystring1.length;
-      elem.selectionEnd = elem.selectionStart;
+      chrome.storage.sync.set({'pastenum': 1});
 
+      chrome.tabs.executeScript(null, {
+        code: 'var param = 1'
+      }, function() {
+        chrome.tabs.executeScript(null, {file: './paste.js'});
+      });
 
-    })
   }
 })
 
 chrome.contextMenus.create(contextMenuItem22)
 chrome.contextMenus.onClicked.addListener(function(clickData){
-  if (clickData.menuItemId == "paste 2"){
-    chrome.storage.sync.get([])
+  if (clickData.menuItemId == "two_p"){
+
+    chrome.storage.sync.set({'pastenum': 2});
+
+    chrome.tabs.executeScript(null, {
+      code: 'var param = 2'
+    }, function() {
+      chrome.tabs.executeScript(null, {file: './paste.js'});
+    });
+
   }
 })
 
 chrome.contextMenus.create(contextMenuItem33)
 chrome.contextMenus.onClicked.addListener(function(clickData){
-  if (clickData.menuItemId == "paste 3"){
-    chrome.storage.sync.get([])
+  if (clickData.menuItemId == "three_p"){
+
+    chrome.storage.sync.set({'pastenum': 3});
+
+    chrome.tabs.executeScript(null, {
+      code: 'var param = 3'
+    }, function() {
+      chrome.tabs.executeScript(null, {file: './paste.js'});
+    });
+
   }
 })
